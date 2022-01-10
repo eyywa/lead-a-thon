@@ -5,6 +5,7 @@ const { scraper } = require("./scraper.js")
 const express = require("express");
 const fs = require("fs");
 var cors = require("cors");
+require("dotenv").config()
 
 //Caching
 const NodeCache = require("node-cache");
@@ -93,4 +94,4 @@ app.get('/bot/:code/', (req, res) => {
     });
 })
 
-app.listen(3000, console.log(`Server is running on: http://localhost:3000`));
+app.listen(process.env.PORT, console.log(`Server is running on: http://localhost:3000`));
